@@ -84,7 +84,7 @@ Before starting, ensure you have accounts for all required services:
 # execute the flow
 ```
 
-![Add workflow](Images/n8n-workflow.gif)
+![Configure OPENAI](Images/configure-openai.gif)
 
 3.  **Set Up ElevenLabs Voice Generation**
 
