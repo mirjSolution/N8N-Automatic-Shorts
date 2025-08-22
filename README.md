@@ -89,11 +89,33 @@ Before starting, ensure you have accounts for all required services:
 3.  **Set Up ElevenLabs Voice Generation**
 
 ```bash
-# Register at 11labs.io
-# Copy API key from profile settings
-# Configure HTTP request node with XI-API-Key header
-# Set endpoint for text-to-speech conversion
+# Register at elevenlabs.io
+# Create and Copy API key from profile settings
+# Configure HTTP request node with XI-API-Key header and in URL copy the code below
+https://api.elevenlabs.io/v1/text-to-speech/{{ $json.message.content['voice-id'] }}/stream
+# Authentication: Generic Credential Type
+# Method: POST
+# Generic Auth Type: Header Auth
+# Header Auth: Create New Credential -
+# Name: xi-api-key
+# Value: Copy and Paste the API key of your eleven labs
+# Rename: the node to "Eleven Labs"
+# Next: enable the option "Send Body"
+# Body Content: JSON
+# Specify Body: JSON
+# Paste the command below on the body
+{
+  "text": "{{ $json.message.content.hook }} {{ $json.message.content.build }} {{$json.message.content.resolution }}",
+  "model_id": "eleven_multilingual_v2",
+  "voice_settings": {
+    "stability": 0.6,
+    "similarity_boost": 0.6
+  }
+}
+# Execute steps
 ```
+
+![Eleven Labs](Images/elevenlabs.gif)
 
 4.  **Configure Video Generation (Kling AI)**
 
