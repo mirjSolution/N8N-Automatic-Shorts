@@ -113,9 +113,12 @@ https://api.elevenlabs.io/v1/text-to-speech/{{ $json.message.content['voice-id']
   }
 }
 # Execute steps
+# Lastly after executing the steps go to Options > Redirects, Response > Response Format = "File" > Put Output in Field = "output.mp3"
 ```
 
 ![Eleven Labs](Images/elevenlabs.gif)
+
+![Eleven Labs](Images/eleven-labs-shorts.gif)
 
 4.  **Configure Video Generation (Kling AI)**
 
